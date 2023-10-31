@@ -88,12 +88,12 @@
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
-        var cocktails = form["cocktails"].value;
+        var cocktail= form["cocktail"].value;
         var ingredients = form["ingredients"].value;
         var user = {
             email: email, 
             name: fullname, 
-            cocktails: cocktails, 
+            cocktail: cocktail, 
             ingredients: ingredients
         };
         analytics.identify('1234', {
