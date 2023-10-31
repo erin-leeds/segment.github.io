@@ -13,15 +13,15 @@
 
 </head> 
 <body> 
-<h1>What is your favorite place to travel?</h1> 
-<p>I am building a directory of the sweetest travel destinations.</p>  
-<form name="travel" onsubmit="identify(event)">
-     What is your favorite travel destination?
-    <input name="destination" required="" size="81" type="text"/> 
+<h1>What is your favorite cocktail?</h1> 
+<p>I am writing a mixology book of everyone's favorite cocktails</p>  
+<form name="drinks" onsubmit="identify(event)">
+     What is your favorite cocktail??
+    <input name="cocktail" required="" size="81" type="text"/> 
     <br><br><br> 
-    Any recommendations (cool things to do, places to visit or restaurants to eat)? 
+    What are the ingredients? 
     <br><br> 
-    <textarea cols="81" name="details" required="" rows="10">
+    <textarea cols="81" name="ingredients" required="" rows="10">
     </textarea> 
     <br><br> 
     Name: <input name="fullname" required="" size="75" type="text"/> 
@@ -37,19 +37,19 @@
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
-        var destination = form["destination"].value;
-        var details = form["details"].value;
+        var destination = form["cocktails"].value;
+        var details = form["ingredients"].value;
         var user = {
             email: email, 
             name: fullname, 
-            destination: destination, 
-            details: details
+            cocktail: cocktail, 
+            ingredients: ingredients
         };
         analytics.identify('1234', {
             email: email, 
             name: fullname
         });
-        analytics.track('destination submitted', user, function() {
+        analytics.track('cocktail submitted', user, function() {
             window.location.href = "";
         });
       }
