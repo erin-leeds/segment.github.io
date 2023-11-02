@@ -75,7 +75,9 @@
     <textarea cols="81" name="ingredients" required="" rows="10">
     </textarea> 
     <br><br> 
-    Name: <input name="fullname" required="" size="75" type="text"/> 
+    First Name: <input name="firstName" required="" size="75" type="text"/> 
+    <br><br> 
+    Last Name: <input name="lastName" required="" size="75" type="text"/> 
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
@@ -87,24 +89,26 @@
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
-        var fullname = form["fullname"].value;
+        var firstName = form["firstName"].value;
+        var lastName = form["lastName"].value;
         var cocktail= form["cocktail"].value;
         var ingredients = form["ingredients"].value;
         var user = {
             email: email, 
-            name: fullname, 
+            firstName: firstName, 
+            lastName: lastName,
             cocktail: cocktail, 
             ingredients: ingredients
         };
         analytics.identify('1234', {
             email: email, 
-            name: fullname
+            firstName: firstName,
+            lastName: lastName
         });
         analytics.track('cocktail submitted', user, function() {
             window.location.href = "";
         });
       }
 </script>
-
 </body> 
 </html>
