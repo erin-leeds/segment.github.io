@@ -100,6 +100,21 @@
             cocktail: cocktail, 
             ingredients: ingredients
         };
+
+     function getRandom4DigitNumber() {
+      return Math.floor(1000 + Math.random() * 9000);
+}
+
+// Usage
+        const random4DigitNumber = getRandom4DigitNumber();
+
+        // Using it in your analytics.identify call
+        analytics.identify(`${random4DigitNumber}`, {
+          email: email,
+          firstName: firstName,
+          lastName: lastName
+        });
+          
         analytics.identify('1234', {
             email: email, 
             firstName: firstName,
